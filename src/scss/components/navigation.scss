@@ -1,0 +1,35 @@
+.navigation {
+  &__item {
+    padding: 26px 17px;
+    box-shadow: inset 0 -2px 0 0 transparent;
+    font-weight: 500;
+
+    &:hover, &--active {
+      box-shadow: inset 0 -2px 0 0 #1A1B22;
+    }
+  }
+}
+
+.mobile-navigation {
+  &__button {
+    display: block;
+    padding: 5px;
+
+    &:before {
+      width: 16px;
+      height: 2px;
+      background: #1A1B22;
+      content: "";
+      display: block;
+    }
+
+    &:after {
+      width: 16px;
+      height: 2px;
+      background: #1A1B22;
+      content: "";
+      display: block;
+      margin-top: 4px;
+    }
+  }
+}

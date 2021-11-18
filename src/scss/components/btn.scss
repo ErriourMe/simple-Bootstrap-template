@@ -1,0 +1,36 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    width: 18px;
+    height: 16px;
+    object-fit: contain;
+  }
+
+  &--non-active {
+    pointer-events: none;
+  }
+
+  & span + .icon, & span + svg {
+    margin-left: 12px;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &--outline {
+    &-dark {
+      border-color: #D1D2D6;
+      box-sizing: border-box;
+      border-radius: 100px !important;
+
+      &:hover {
+        border-color: #1A1B22;
+        opacity: 1;
+      }
+    }
+  }
+}

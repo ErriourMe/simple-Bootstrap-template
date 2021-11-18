@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="<%=author%>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title><%=title%> | NewsExplorer</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+
+    <script src="./js/vendor.js"></script>
+    <script src="./js/main.js"></script>
+</head>
+<body>
+    <header class="header d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between container">
+        <a href="#" class="logo">NewsExplorer</a>
+        <nav class="navigation d-none d-md-flex align-items-center">
+          <a href="#" class="py-4 px-3 text-dark text-decoration-none f-roboto navigation__item">Главная</a>
+          <a href="#" class="py-4 px-3 text-dark text-decoration-none f-roboto navigation__item navigation__item--active">Сохраненные статьи</a>
+          <a href="#logout" class="ms-3 btn btn-outline btn--outline-dark">
+            <span>Грета</span>
+            <img src="./images/svg/logout.svg" alt="" class="icon" />
+          </a>
+        </nav>
+        <div class="d-block d-md-none mobile-navigation">
+          <button class="btn d-block p-2 mobile-navigation__button"></button>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">

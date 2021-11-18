@@ -1,0 +1,32 @@
+.article-card {
+  overflow: hidden;
+  border-radius: 15px;
+  transition: 0.2s ease;
+  box-shadow: 0 5px 40px rgba(8, 29, 45, 0.05);
+
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: 0 5px 50px rgba(85, 109, 128, 0.05);
+  }
+
+  &__actions {
+    &-bookmark {
+      font-size: 12px;
+      margin-right: 5px;
+    }
+
+    &-delete {
+      padding: 12px;
+    }
+  }
+
+  &__content {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  &__date {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}

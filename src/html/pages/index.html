@@ -1,0 +1,44 @@
+<% var data = {
+    title: "Сохраненные статьи",
+    author: "Erriour (Vladimir Gonchar)",
+    pagename: "index"
+}; %>
+<%= _.template(require('./../layouts/header.html').default)(data) %>
+
+<div class="container">
+  <%= _.template(require('./../components/pageHeader.html').default)(data) %>
+</div>
+
+<div class="bg-light-gray py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="mb-4 mx-md-0">
+          <%= _.template(require('./../components/articleCard.html').default)(data) %>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="mb-4 mx-md-0">
+          <%= _.template(require('./../components/articleCard.html').default)(data) %>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="mb-4 mx-md-0">
+          <%= _.template(require('./../components/articleCard.html').default)(data) %>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="mb-4 mx-md-0">
+          <%= _.template(require('./../components/articleCard.html').default)(data) %>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="mb-4 mx-md-0">
+          <%= _.template(require('./../components/articleCard.html').default)(data) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= _.template(require('./../layouts/footer.html').default)(data) %>
