@@ -4,7 +4,8 @@
     "build": "webpack --mode production",
     "dev": "webpack --mode development",
     "watch": "webpack --mode development --watch",
-    "test": "node-w3c-validator -i ./dist/*.html -f html -o ./reports/result.html -s"
+    "test": "node-w3c-validator -i ./dist/*.html -f html -o ./reports/result.html -s",
+    "serve": "serve"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -32,7 +33,8 @@
   "dependencies": {
     "@popperjs/core": "^2.10.2",
     "bootstrap": "^5.1.3",
-    "node-w3c-validator": "^2.0.1"
+    "node-w3c-validator": "^2.0.1",
+    "serve": "^13.0.2"
   },
   "name": "simple-bootstrap",
   "version": "1.0.1",
