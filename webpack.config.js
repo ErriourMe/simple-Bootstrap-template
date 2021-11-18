@@ -4,6 +4,7 @@ const webpack = require("webpack");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
@@ -41,32 +42,32 @@ module.exports = {
           loader: "babel-loader"
         }
       },
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "css/[name].css"
-            }
-          },
-          {
-            loader: "extract-loader"
-          },
-          {
-            loader: "css-loader?-url"
-          },
-          {
-            loader: "postcss-loader",
-            options: {
-                options: {},
-            }
-          },
-          {
-            loader: "sass-loader"
-          }
-        ]
-      },
+      // {
+      //   test: /\.scss$/,
+      //   use: [
+      //     {
+      //       loader: "file-loader",
+      //       options: {
+      //         name: "css/[name].css"
+      //       }
+      //     },
+      //     {
+      //       loader: "extract-loader"
+      //     },
+      //     {
+      //       loader: "css-loader?-url"
+      //     },
+      //     {
+      //       loader: "postcss-loader",
+      //       options: {
+      //           options: {},
+      //       }
+      //     },
+      //     {
+      //       loader: "sass-loader"
+      //     }
+      //   ]
+      // },
       //img loader
       {
         test: /\.(svg|png|jpe?g|)$/i,
@@ -87,6 +88,10 @@ module.exports = {
         }]
       },
       {
+        test: /.s?css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+      },
+      {
         test: /\.html$/,
         include: path.resolve(__dirname, 'src/html/layouts'),
         use: ['raw-loader']
@@ -104,7 +109,8 @@ module.exports = {
         cssProcessorPluginOptions: {
         preset: ['default', { discardComments: { removeAll: true } }],
         }
-      })
+      }),
+      new CssMinimizerPlugin(),
     ]
   },
   plugins: [
@@ -114,6 +120,7 @@ module.exports = {
     //     'window.jQuery': 'jquery'
     //   }),
     new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin(),
     new MiniCssExtractPlugin({
       filename: "css/[name].css"
     }),
